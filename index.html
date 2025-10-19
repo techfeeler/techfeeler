@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Feeler - Gaming Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-gamepad"></i>
+                <h1>Tech Feeler</h1>
+            </div>
+            <nav class="nav">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#games" class="nav-link">Games</a>
+                <a href="#categories" class="nav-link">Categories</a>
+                <a href="#leaderboard" class="nav-link">Leaderboard</a>
+                <a href="#add-game" class="nav-link">Add Game</a>
+            </nav>
+            <div class="user-menu">
+                <button class="btn-user">
+                    <i class="fas fa-user"></i>
+                    <span>Player</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="section active">
+            <div class="hero-content">
+                <h2>Welcome to Tech Feeler</h2>
+                <p>Your Ultimate Gaming Destination</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number" id="totalGames">0</span>
+                        <span class="stat-label">Games Available</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" id="totalPlayers">0</span>
+                        <span class="stat-label">Active Players</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" id="totalPlays">0</span>
+                        <span class="stat-label">Games Played</span>
+                    </div>
+                </div>
+                <button class="btn-primary" onclick="showSection('games')">
+                    <i class="fas fa-play"></i>
+                    Start Playing
+                </button>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-icons">
+                    <i class="fas fa-dice"></i>
+                    <i class="fas fa-chess"></i>
+                    <i class="fas fa-puzzle-piece"></i>
+                    <i class="fas fa-rocket"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Games Section -->
+        <section id="games" class="section">
+            <div class="section-header">
+                <h2>Featured Games</h2>
+                <p>Discover amazing games and start playing instantly</p>
+            </div>
+            
+            <div class="games-filter">
+                <button class="filter-btn active" data-filter="all">All Games</button>
+                <button class="filter-btn" data-filter="action">Action</button>
+                <button class="filter-btn" data-filter="puzzle">Puzzle</button>
+                <button class="filter-btn" data-filter="arcade">Arcade</button>
+                <button class="filter-btn" data-filter="strategy">Strategy</button>
+            </div>
+
+            <div class="games-grid" id="gamesGrid">
+                <!-- Games will be dynamically loaded here -->
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section id="categories" class="section">
+            <div class="section-header">
+                <h2>Game Categories</h2>
+                <p>Explore games by category</p>
+            </div>
+            
+            <div class="categories-grid">
+                <div class="category-card" data-category="action">
+                    <div class="category-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3>Action Games</h3>
+                    <p>Fast-paced, adrenaline-pumping games</p>
+                    <span class="game-count">0 games</span>
+                </div>
+                
+                <div class="category-card" data-category="puzzle">
+                    <div class="category-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Puzzle Games</h3>
+                    <p>Challenge your mind with brain teasers</p>
+                    <span class="game-count">0 games</span>
+                </div>
+                
+                <div class="category-card" data-category="arcade">
+                    <div class="category-icon">
+                        <i class="fas fa-joystick"></i>
+                    </div>
+                    <h3>Arcade Games</h3>
+                    <p>Classic arcade-style entertainment</p>
+                    <span class="game-count">0 games</span>
+                </div>
+                
+                <div class="category-card" data-category="strategy">
+                    <div class="category-icon">
+                        <i class="fas fa-chess"></i>
+                    </div>
+                    <h3>Strategy Games</h3>
+                    <p>Think strategically to win</p>
+                    <span class="game-count">0 games</span>
+                </div>
+                
+                <div class="category-card" data-category="sports">
+                    <div class="category-icon">
+                        <i class="fas fa-futbol"></i>
+                    </div>
+                    <h3>Sports Games</h3>
+                    <p>Virtual sports and competitions</p>
+                    <span class="game-count">0 games</span>
+                </div>
+                
+                <div class="category-card" data-category="racing">
+                    <div class="category-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Racing Games</h3>
+                    <p>Speed and precision racing</p>
+                    <span class="game-count">0 games</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leaderboard Section -->
+        <section id="leaderboard" class="section">
+            <div class="section-header">
+                <h2>Leaderboard</h2>
+                <p>Top players and high scores</p>
+            </div>
+            
+            <div class="leaderboard-tabs">
+                <button class="tab-btn active" data-tab="weekly">Weekly</button>
+                <button class="tab-btn" data-tab="monthly">Monthly</button>
+                <button class="tab-btn" data-tab="all-time">All Time</button>
+            </div>
+            
+            <div class="leaderboard-content">
+                <div class="leaderboard-list" id="leaderboardList">
+                    <!-- Leaderboard entries will be loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Add Game Section -->
+        <section id="add-game" class="section">
+            <div class="section-header">
+                <h2>Add New Game</h2>
+                <p>Contribute to our gaming collection</p>
+            </div>
+            
+            <div class="add-game-form">
+                <form id="gameForm">
+                    <div class="form-group">
+                        <label for="gameName">Game Name</label>
+                        <input type="text" id="gameName" name="gameName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="gameDescription">Description</label>
+                        <textarea id="gameDescription" name="gameDescription" rows="4" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="gameCategory">Category</label>
+                        <select id="gameCategory" name="gameCategory" required>
+                            <option value="">Select Category</option>
+                            <option value="action">Action</option>
+                            <option value="puzzle">Puzzle</option>
+                            <option value="arcade">Arcade</option>
+                            <option value="strategy">Strategy</option>
+                            <option value="sports">Sports</option>
+                            <option value="racing">Racing</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="gameDifficulty">Difficulty</label>
+                        <select id="gameDifficulty" name="gameDifficulty" required>
+                            <option value="">Select Difficulty</option>
+                            <option value="easy">Easy</option>
+                            <option value="medium">Medium</option>
+                            <option value="hard">Hard</option>
+                        </select>
+        </div>
+        
+                    <div class="form-group">
+                        <label for="gameImage">Game Image URL</label>
+                        <input type="url" id="gameImage" name="gameImage" placeholder="https://example.com/image.jpg">
+        </div>
+        
+                    <div class="form-group">
+                        <label for="gameCode">Game Code (HTML/JavaScript)</label>
+                        <textarea id="gameCode" name="gameCode" rows="10" placeholder="Paste your game code here..."></textarea>
+        </div>
+        
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-plus"></i>
+                            Add Game
+                        </button>
+                        <button type="button" class="btn-secondary" onclick="resetForm()">
+                            <i class="fas fa-undo"></i>
+                            Reset
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Game Modal -->
+    <div id="gameModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalGameTitle">Game Title</h3>
+                <button class="close-btn" onclick="closeGameModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="gameContainer">
+                    <!-- Game will be loaded here -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeGameModal()">
+                    <i class="fas fa-times"></i>
+                    Close Game
+                </button>
+                <button class="btn-primary" onclick="restartGame()">
+                    <i class="fas fa-redo"></i>
+                    Restart
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Tech Feeler</h3>
+                    <p>Your ultimate gaming destination</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#games">Games</a></li>
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="#leaderboard">Leaderboard</a></li>
+                        <li><a href="#add-game">Add Game</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Report Bug</a></li>
+                        <li><a href="#">Suggest Game</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Tech Feeler. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="game.js"></script>
+</body>
+</html>
